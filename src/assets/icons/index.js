@@ -1,10 +1,10 @@
-import ArrowDown from "./arrow-down.png";
-import ArrowLeft from "./arrow-left.png";
-import Calendar2 from "./calendar-2.png";
-import Colorfilter from "./colorfilter.png";
-import MessageQuestion from "./message-question.png";
-import Notification from "./notification.png";
-import SearchNormal from "./search-normal.png";
+import ArrowDown from "./arrow-down.svg";
+import ArrowLeft from "./arrow-left2.svg";
+import Calendar2 from "./calendar-2.svg";
+import Colorfilter from "./colorfilter.svg";
+import MessageQuestion from "./message-question.svg";
+import Notification from "./notification.svg";
+import SearchNormal from "./search-normal.svg";
 
 export {
   ArrowDown,

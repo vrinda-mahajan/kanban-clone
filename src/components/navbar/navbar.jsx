@@ -1,21 +1,33 @@
-import { Calendar2 } from "../../assets/icons/index";
+import {
+  ArrowDown,
+  ArrowLeft,
+  Calendar2,
+  Colorfilter,
+  MessageQuestion,
+  Notification,
+  SearchNormal,
+} from "../../assets/icons/index";
+import { ProfileImg } from "../../assets/images";
 
 export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-logo-wrapper">
         <h4>
-          <i></i>Project M.
+          <img src={Colorfilter} />
+          Project M.
         </h4>
-        <i></i>
+        <img src={ArrowLeft} />
       </div>
       <div className="navbar-input-wrapper">
-        <i></i>
+        <img src={SearchNormal} />
         <input placeholder="Search for anything..."></input>
       </div>
       <div>
         <div className="navbar-icons-wrapper">
           <img src={Calendar2}></img>
+          <img src={MessageQuestion}></img>
+          <img src={Notification}></img>
         </div>
         <div className="navbar-profile-wrapper">
           <div className="navbar-profile-details">
@@ -23,9 +35,9 @@ export default function Navbar() {
             <p>U.P, India</p>
           </div>
           <div className="navbar-profile-img">
-            <img></img>
+            <img src={ProfileImg} />
           </div>
-          <i></i>
+          <img src={ArrowDown} />
         </div>
       </div>
     </nav>
