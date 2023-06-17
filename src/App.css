@@ -1,0 +1,16 @@
+a,
+li {
+  text-decoration: none;
+}
+flex-r {
+  display: flex;
+}
+flex-c {
+  display: flex;
+  flex-direction: column;
+}
+flex-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
