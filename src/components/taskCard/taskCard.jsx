@@ -38,7 +38,7 @@ export default function TaskCard({ provided, snapshot, item }) {
         {item.cardDescription ? (
           <p className="taskcard-description">{item.cardDescription}</p>
         ) : (
-          <img className="taskcard-img" src={item.cardImg} />
+          <img className="taskcard-img" src={item.cardImg} alt="card-img" />
         )}
       </div>
       <div className="taskcard-footer flex-r">

@@ -4,7 +4,6 @@ import { columnsFromBackend } from "../../data/columns";
 import "./main.css";
 import TaskCard from "../taskCard/taskCard";
 import {
-  AddSquare,
   ArrowDown,
   Calendar,
   Edit,

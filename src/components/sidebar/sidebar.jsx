@@ -40,7 +40,7 @@ export default function Sidebar() {
       <div className="project-section-wrapper">
         <div className="project-section-heading flex-r">
           <h4>My Projects</h4>
-          <img src={AddSquare} />
+          <img src={AddSquare} alt="add" />
         </div>
         {sidebarProjectsData.map(
           ({ projectName, color, isSelected }, index) => {

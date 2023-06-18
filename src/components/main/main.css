@@ -191,7 +191,7 @@
   .main-heading {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
   .main-btns-right {
     display: none !important;
