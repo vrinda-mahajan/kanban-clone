@@ -16,9 +16,9 @@ import {
 } from "../../assets/icons";
 import MultipleAvatars from "../multipleAvatars/multipleAvatars";
 import { DummyUser, User1, User2, User3, User4 } from "../../assets/images";
-import { flatMap, isEmpty } from "lodash";
+import { isEmpty } from "lodash";
 
-const handleDragUpdate = (result, setPlaceholderProps) => {
+const handleOnDragUpdate = (result, setPlaceholderProps) => {
   if (!result.destination) {
     return;
   }
@@ -227,7 +227,7 @@ export default function Main() {
             handleOnDragStart(result, setPlaceholderProps)
           }
           onDragUpdate={(result) =>
-            handleDragUpdate(result, setPlaceholderProps)
+            handleOnDragUpdate(result, setPlaceholderProps)
           }
         >
           {Object.entries(columns).map(([id, column]) => {
