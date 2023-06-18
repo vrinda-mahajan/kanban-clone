@@ -3,7 +3,7 @@ import { cardsDataFromBackend } from "./cards";
 
 export const columnsFromBackend = {
   [uuidv4()]: {
-    name: "To do",
+    name: "To Do",
     items: cardsDataFromBackend.filter((item) =>
       item.column === "to-do" ? item : null
     ),

@@ -1,6 +1,7 @@
 .navbar {
   align-items: center;
   border-bottom: 1px solid #dbdbdb;
+  height: 13vh;
 }
 .navbar-logo-wrapper {
   width: 18%;

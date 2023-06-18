@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-import { columnsFromBackend } from "../../../data/columns";
+import { columnsFromBackend } from "../../data/columns";
+import "./main.css";
 
 const handleOnDragEnd = (result, columns, setColumns) => {
   const { source, destination } = result;
@@ -36,25 +37,37 @@ const handleOnDragEnd = (result, columns, setColumns) => {
     });
   }
 };
+
+const identifyColumn = (name) => {
+  console.log(name);
+  switch (name) {
+    case "To Do":
+      return "main-to-do";
+    case "On Progress":
+      return "main-on-progress";
+    case "Done":
+      return "main-done";
+    default:
+      break;
+  }
+};
 export default function Main() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return (
-    <div className="flex-r">
+    <div className="flex-r main-wrapper">
       <DragDropContext
         onDragEnd={(result) => handleOnDragEnd(result, columns, setColumns)}
       >
         {Object.entries(columns).map(([id, column]) => {
           return (
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-              }}
-              key={id}
-            >
-              <h2>{column.name}</h2>
-              <h4>{column.items.length}</h4>
+            <div className="flex-c column-wrapper" key={id}>
+              <div className={`column-heading ${identifyColumn(column.name)}`}>
+                <div></div>
+                <h2 className="column-name">{column.name}</h2>
+                <h4 className="flex-centre column-count">
+                  {column.items.length}
+                </h4>
+              </div>
               <div style={{ margin: 8 }}>
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
@@ -62,6 +75,7 @@ export default function Main() {
                       <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
+                        className="column-container"
                         style={{
                           background: snapshot.isDraggingOver ? "blue" : "grey",
                           padding: 4,
