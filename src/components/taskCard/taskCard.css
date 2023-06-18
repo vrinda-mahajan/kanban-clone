@@ -63,3 +63,20 @@
   width: 1.6rem;
   margin-right: 5px;
 }
+
+
+@media screen and (max-width:1024px) {
+  .taskcard-btns > p>span{
+    display: none;
+  }
+}
+@media screen and (max-width:786px) {
+  /* .main-wrapper {
+    width: 100%;
+  } */
+}
+@media screen and (max-width:480px) {
+  /* .main-wrapper {
+    width: 100%;
+  } */
+}

@@ -102,18 +102,12 @@
   margin-bottom: 2rem;
 }
 
-@media screen and (max-width:1024px) {
+@media screen and (max-width: 1024px) {
   .sidebar-wrapper {
     display: none;
   }
 }
-@media screen and (max-width:786px) {
-  .sidebar-wrapper {
-    display: none;
-  }
+@media screen and (max-width: 786px) {
 }
-@media screen and (max-width:480px) {
-  .sidebar-wrapper {
-    display: none;
-  }
+@media screen and (max-width: 480px) {
 }

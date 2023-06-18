@@ -117,7 +117,7 @@ export default function Main() {
               <img src={ArrowDown} alt="arrow-down" />
             </button>
           </div>
-          <div className="main-btns-right flex-r">
+          <div className="flex-r main-btns-right">
             <button className="main-btns flex-r">
               <img src={Share} alt="share" />
               <p>Share</p>
@@ -130,7 +130,7 @@ export default function Main() {
           </div>
         </div>
       </div>
-      <div className="flex-r">
+      <div className="flex-r main-column-section">
         <DragDropContext
           onDragEnd={(result) => handleOnDragEnd(result, columns, setColumns)}
         >

@@ -46,10 +46,15 @@ export default function TaskCard({ provided, snapshot, item }) {
         <div className="taskcard-btns-wrapper flex-r">
           <span className="taskcard-btns flex-r">
             <img alt="comments" src={Comments} />
-            {comments} comments
+            <p>
+              {comments} <span>comments</span>
+            </p>
           </span>
           <span className="taskcard-btns flex-r">
-            <img alt="files" src={Files} /> {files} files
+            <img alt="files" src={Files} />{" "}
+            <p>
+              {files} <span>files</span>
+            </p>
           </span>
         </div>
       </div>
