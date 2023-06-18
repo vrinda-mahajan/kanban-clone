@@ -16,7 +16,7 @@ import {
 } from "../../assets/icons";
 import MultipleAvatars from "../multipleAvatars/multipleAvatars";
 import { DummyUser, User1, User2, User3, User4 } from "../../assets/images";
-import { isEmpty } from "lodash";
+import { flatMap, isEmpty } from "lodash";
 
 const handleDragUpdate = (result, setPlaceholderProps) => {
   if (!result.destination) {
@@ -116,10 +116,11 @@ const handleOnDragEnd = (result, columns, setColumns) => {
     const destItems = [...destColumn.items];
     let [removed] = sourceItems.splice(source.index, 1);
     console.log(destColumn, removed);
-    // if(destColumn.name === "Done"){
-    // removed = { ...removed, priority: "Completed" };
-    // }else{
-    // }
+    if (destColumn.name === "Done") {
+      removed = { ...removed, isCompleted: true };
+    } else {
+      removed = { ...removed, isCompleted: false };
+    }
     removed = { ...removed, column: destColumn.name };
     destItems.splice(destination.index, 0, removed);
     console.log("destItems", destItems);

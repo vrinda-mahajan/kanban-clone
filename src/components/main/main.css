@@ -1,7 +1,6 @@
 .main-wrapper {
   width: 82%;
-  padding: 4.4rem 5.2rem;
-  /* justify-content: center; */
+  padding: 4rem;
 }
 .main-to-do {
   border-bottom: 3px solid #5030e5;
@@ -73,7 +72,6 @@
   line-height: 5.6rem;
   text-transform: capitalize;
   color: #0d062d;
-  margin-left: 6px;
 }
 .main-heading-left-icon {
   background-color: #5030e533;

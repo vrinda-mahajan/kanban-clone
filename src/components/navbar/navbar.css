@@ -1,6 +1,10 @@
 .navbar {
   align-items: center;
   border-bottom: 1px solid #dbdbdb;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 2;
 }
 .navbar-logo-wrapper {
   width: 18%;
@@ -85,15 +89,18 @@
   }
 }
 @media screen and (max-width: 786px) {
-  .navbar-icons-wrapper {
+  /* .navbar-icons-wrapper {
     display: none !important;
-  }
+  } */
   .navbar-input-wrapper {
     width: 45%;
   }
   .navbar-profile-wrapper {
     margin-left: 0;
   }
+  .navbar-profile-details {
+    display: none;
+}
 }
 @media screen and (max-width: 480px) {
   .navbar-input-wrapper {

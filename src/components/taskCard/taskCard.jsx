@@ -7,14 +7,12 @@ const getClassForPriorityChip = (priority) => {
       return "priority-chip-low";
     case "High":
       return "priority-chip-high";
-    case "Completed":
-      return "priority-chip-completed";
     default:
       break;
   }
 };
 export default function TaskCard({ provided, snapshot, item }) {
-  const { priority, cardName, comments, files, users } = item;
+  const { priority, isCompleted, cardName, comments, files, users } = item;
 
   return (
     <div
@@ -27,8 +25,12 @@ export default function TaskCard({ provided, snapshot, item }) {
       }}
     >
       <div className="priority-chip-wrapper">
-        <span className={`priority-chip ${getClassForPriorityChip(priority)}`}>
-          {priority}
+        <span
+          className={`priority-chip ${getClassForPriorityChip(priority)} ${
+            isCompleted ? "priority-chip-completed" : ""
+          }`}
+        >
+          {isCompleted ? "Completed" : priority}
         </span>
         <img alt="more" src={ThreeDots} />
       </div>
