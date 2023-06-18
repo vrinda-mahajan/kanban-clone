@@ -52,6 +52,7 @@
   background-color: #e0e0e0;
 }
 .droppable-area-wrapper {
+  position: relative;
 }
 .droppable-area-container {
 }
@@ -196,4 +197,12 @@
   .main-btns-right {
     display: none !important;
   }
+}
+
+.placeholder {
+  position: absolute;
+  border-radius: 1rem;
+  border: dashed 1px #5030E596;
+  background-color: #5030E50F;
+  margin: 2rem 0;
 }

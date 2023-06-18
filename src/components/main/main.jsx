@@ -16,7 +16,95 @@ import {
 } from "../../assets/icons";
 import MultipleAvatars from "../multipleAvatars/multipleAvatars";
 import { DummyUser, User1, User2, User3, User4 } from "../../assets/images";
+import { isEmpty } from "lodash";
 
+const handleDragUpdate = (result, setPlaceholderProps) => {
+  if (!result.destination) {
+    return;
+  }
+
+  const draggedDOM = getDraggedDom(result.draggableId);
+
+  if (!draggedDOM) {
+    return;
+  }
+
+  const { clientHeight, clientWidth } = draggedDOM;
+  const destinationIndex = result.destination.index;
+  const sourceIndex = result.source.index;
+
+  const childrenArray = [...draggedDOM.parentNode.children];
+  const movedItem = childrenArray[sourceIndex];
+  childrenArray.splice(sourceIndex, 1);
+
+  const updatedArray = [
+    ...childrenArray.slice(0, destinationIndex),
+    movedItem,
+    ...childrenArray.slice(destinationIndex + 1),
+  ];
+
+  var clientY =
+    parseFloat(window.getComputedStyle(draggedDOM.parentNode).paddingTop) +
+    updatedArray.slice(0, destinationIndex).reduce((total, curr) => {
+      const style = curr.currentStyle || window.getComputedStyle(curr);
+      console.log("style", style);
+      const marginBottom = parseFloat(style.marginBottom);
+      console.log("margin bootom", marginBottom);
+      return total + curr.clientHeight + marginBottom;
+    }, 0);
+  console.log(
+    "CLIHeight",
+    clientHeight,
+    "CLIWidht",
+    clientWidth,
+    "CLIY",
+    clientY
+  );
+
+  setPlaceholderProps({
+    clientHeight,
+    clientWidth,
+    clientY,
+    clientX: parseFloat(
+      window.getComputedStyle(draggedDOM.parentNode).paddingLeft
+    ),
+  });
+};
+const handleOnDragStart = (result, setPlaceholderProps) => {
+  console.log(result);
+  const draggedDOM = getDraggedDom(result.draggableId);
+
+  if (!draggedDOM) {
+    return;
+  }
+  const { clientHeight, clientWidth } = draggedDOM;
+  const sourceIndex = result.source.index;
+  const clientY =
+    parseFloat(window.getComputedStyle(draggedDOM.parentNode).paddingTop) +
+    [...draggedDOM.parentNode.children]
+      .slice(0, sourceIndex)
+      .reduce((total, curr) => {
+        const style = curr.currentStyle || window.getComputedStyle(curr);
+        const marginBottom = parseFloat(style.marginBottom);
+        return total + curr.clientHeight + marginBottom;
+      }, 0);
+
+  setPlaceholderProps({
+    clientHeight,
+    clientWidth,
+    clientY,
+    clientX: parseFloat(
+      window.getComputedStyle(draggedDOM.parentNode).paddingLeft
+    ),
+  });
+};
+const getDraggedDom = (draggableId) => {
+  const queryAttr = "data-rbd-drag-handle-draggable-id";
+  const domQuery = `[${queryAttr}='${draggableId}']`;
+  const draggedDOM = document.querySelector(domQuery);
+
+  return draggedDOM;
+};
 const handleOnDragEnd = (result, columns, setColumns) => {
   console.log(result);
   if (!result.destination) return;
@@ -76,6 +164,8 @@ const identifyColumn = (name) => {
 };
 export default function Main() {
   const [columns, setColumns] = useState(columnsFromBackend);
+  const [placeholderProps, setPlaceholderProps] = useState({});
+
   return (
     <div className="flex-c main-wrapper">
       <div className="main-heading-wrapper">
@@ -132,6 +222,12 @@ export default function Main() {
       <div className="flex-r main-column-section">
         <DragDropContext
           onDragEnd={(result) => handleOnDragEnd(result, columns, setColumns)}
+          onDragStart={(result) =>
+            handleOnDragStart(result, setPlaceholderProps)
+          }
+          onDragUpdate={(result) =>
+            handleDragUpdate(result, setPlaceholderProps)
+          }
         >
           {Object.entries(columns).map(([id, column]) => {
             return (
@@ -177,6 +273,18 @@ export default function Main() {
                             );
                           })}
                           {provided.placeholder}
+                          {!isEmpty(placeholderProps) &&
+                            snapshot.isDraggingOver && (
+                              <div
+                                className="placeholder"
+                                style={{
+                                  top: placeholderProps.clientY,
+                                  left: placeholderProps.clientX,
+                                  height: placeholderProps.clientHeight,
+                                  width: placeholderProps.clientWidth,
+                                }}
+                              />
+                            )}
                         </div>
                       );
                     }}
