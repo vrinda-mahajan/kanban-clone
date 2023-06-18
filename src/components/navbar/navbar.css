@@ -100,7 +100,14 @@
   }
   .navbar-profile-details {
     display: none;
-}
+  }
+  .navbar-logo-wrapper {
+    width: 18%;
+  }
+  .navbar-logo-icon {
+    margin-left: 0;
+    display: none;
+  }
 }
 @media screen and (max-width: 480px) {
   .navbar-input-wrapper {
@@ -109,11 +116,5 @@
   .navbar-right-section {
     justify-content: end;
     padding: 0 2.8rem;
-  }
-  .navbar-logo > img {
-    display: none;
-  }
-  .navbar-logo-icon {
-    margin-left: 0;
   }
 }

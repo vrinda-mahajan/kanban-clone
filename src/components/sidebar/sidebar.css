@@ -1,9 +1,12 @@
 .sidebar-wrapper {
   width: 18%;
+  height: 100%;
   border-right: 1px solid #dbdbdb;
   padding-left: 2.2rem;
   padding-right: 1.4rem;
   padding-top: 0.8rem;
+  position: sticky;
+  top: 8.9rem;
 }
 .sidebar-item-wrapper {
   border-bottom: 1px solid #dbdbdb;
@@ -103,11 +106,26 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .sidebar-wrapper {
-    display: none;
-  }
 }
 @media screen and (max-width: 786px) {
+   .sidebar-wrapper {
+    height: 88vh;
+  }
+  .project-section-wrapper {
+    display: none;
+  }
+  .sidebar-footer {
+    display: none !important;
+  }
+  .sidebar-items > p {
+    display: none;
+  }
+  .sidebar-items > img {
+    margin-right: 0;
+  }
+  .sidebar-item-wrapper {
+    border-bottom: none;
+}
 }
 @media screen and (max-width: 480px) {
 }
