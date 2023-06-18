@@ -1,6 +1,6 @@
 .main-wrapper {
   width: 82%;
-  padding: 5.2rem;
+  padding: 4.4rem 5.2rem;
   /* justify-content: center; */
 }
 .main-to-do {
@@ -21,9 +21,6 @@
 .main-done > div {
   background-color: #8bc48a;
 }
-.column-container {
-}
-
 .column-wrapper {
   background: #f5f5f5;
   margin: 1.6rem;
@@ -57,4 +54,125 @@
 .droppable-area-wrapper {
 }
 .droppable-area-container {
+}
+.main-heading-wrapper {
+  margin-left: 2rem;
+}
+.main-heading {
+  align-items: center;
+  justify-content: space-between;
+}
+.main-heading-left {
+  align-items: center;
+  gap: 1.2rem;
+}
+.main-heading-left > h1 {
+  font-weight: 600;
+  font-size: 4.6rem;
+  line-height: 5.6rem;
+  text-transform: capitalize;
+  color: #0d062d;
+  margin-left: 6px;
+}
+.main-heading-left-icon {
+  background-color: #5030e533;
+  padding: 6px;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 6px;
+}
+.main-heading-left-icon > img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.main-heading-right-icon {
+  background-color: #5030e533;
+  padding: 6px;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 6px;
+}
+.main-heading-right-icon > img {
+  width: 8px;
+  height: 8px;
+}
+.invite-btn {
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-transform: capitalize;
+  color: #5030e5;
+  gap: 7px;
+  margin-right: 1.2rem;
+}
+.main-btns-wrapper {
+  justify-content: space-between;
+  margin-top: 3.4rem;
+  margin-bottom: 2.8rem;
+}
+.main-btns-left{
+  gap: 1.2rem;
+}
+.main-btns-right{
+  align-items: center;
+  gap: 2rem;
+}
+.main-btns {
+  cursor: pointer;
+  padding: 0.8rem;
+  border: 1px solid #787486;
+  background: none;
+  padding-left: 1.5rem;
+  border-radius: 6px;
+  align-items: center;
+  gap: 6px;
+}
+.main-btns>p{
+  margin-right: 4px;
+  font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+text-transform: capitalize;
+
+color: #787486;
+}
+.main-btns>img{
+  width: 1.6rem;
+  height: 1.6rem;
+}
+.main-pause-btn {
+  cursor: pointer;
+  height: 3.4rem;
+  width: 3.4rem;
+  background-color: #5030e5;
+  border-radius: 6px;
+}
+.main-pause-btn>img{
+  height: 1.8rem;
+  width: 1.8rem;
+}
+.main-menu-icon {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+}
+.vertical-line{
+  height: 3rem;
+  border-right: 1px solid #787486;
+}
+
+@media screen and (max-width:1024px) {
+  .main-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width:786px) {
+  .main-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width:480px) {
+  .main-wrapper {
+    width: 100%;
+  }
 }

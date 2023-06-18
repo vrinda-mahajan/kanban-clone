@@ -3,6 +3,7 @@
   border-right: 1px solid #dbdbdb;
   padding-left: 2.2rem;
   padding-right: 1.4rem;
+  padding-top: 0.8rem;
 }
 .sidebar-item-wrapper {
   border-bottom: 1px solid #dbdbdb;
@@ -99,4 +100,20 @@
   border-radius: 4px;
   border: none;
   margin-bottom: 2rem;
+}
+
+@media screen and (max-width:1024px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+}
+@media screen and (max-width:786px) {
+  .sidebar-wrapper {
+    display: none;
+  }
+}
+@media screen and (max-width:480px) {
+  .sidebar-wrapper {
+    display: none;
+  }
 }

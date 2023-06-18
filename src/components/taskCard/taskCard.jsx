@@ -14,7 +14,7 @@ const getClassForPriorityChip = (priority) => {
   }
 };
 export default function TaskCard({ provided, snapshot, item }) {
-  const { priority, cardName, comments, files,users } = item;
+  const { priority, cardName, comments, files, users } = item;
 
   return (
     <div
@@ -38,20 +38,20 @@ export default function TaskCard({ provided, snapshot, item }) {
         {item.cardDescription ? (
           <p className="taskcard-description">{item.cardDescription}</p>
         ) : (
-          <img src={item.cardImg} />
+          <img className="taskcard-img" src={item.cardImg} />
         )}
       </div>
       <div className="taskcard-footer flex-r">
-        <MultipleAvatars users={users} />
+        <MultipleAvatars users={users} reversed={true} size={"small"} />
         <div className="taskcard-btns-wrapper flex-r">
-      <span className="taskcard-btns flex-r">
-        <img alt="comments" src={Comments} />
-        {comments} comments
-      </span>
-      <span className="taskcard-btns flex-r">
-        <img alt="files" src={Files} /> {files} files
-      </span>
-      </div>
+          <span className="taskcard-btns flex-r">
+            <img alt="comments" src={Comments} />
+            {comments} comments
+          </span>
+          <span className="taskcard-btns flex-r">
+            <img alt="files" src={Files} /> {files} files
+          </span>
+        </div>
       </div>
     </div>
   );
