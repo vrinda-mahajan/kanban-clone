@@ -1,4 +1,5 @@
 import { Comments, Files, ThreeDots } from "../../assets/icons";
+import MultipleAvatars from "../multipleAvatars/multipleAvatars";
 import "./taskCard.css";
 const getClassForPriorityChip = (priority) => {
   switch (priority) {
@@ -13,7 +14,7 @@ const getClassForPriorityChip = (priority) => {
   }
 };
 export default function TaskCard({ provided, snapshot, item }) {
-  const { priority, cardName, comments, files } = item;
+  const { priority, cardName, comments, files,users } = item;
 
   return (
     <div
@@ -41,13 +42,16 @@ export default function TaskCard({ provided, snapshot, item }) {
         )}
       </div>
       <div className="taskcard-footer flex-r">
-      <span className="taskcard-btn flex-r">
+        <MultipleAvatars users={users} />
+        <div className="taskcard-btns-wrapper flex-r">
+      <span className="taskcard-btns flex-r">
         <img alt="comments" src={Comments} />
         {comments} comments
       </span>
-      <span className="taskcard-btn flex-r">
+      <span className="taskcard-btns flex-r">
         <img alt="files" src={Files} /> {files} files
       </span>
+      </div>
       </div>
     </div>
   );

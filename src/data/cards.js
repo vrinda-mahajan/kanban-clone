@@ -19,7 +19,7 @@ export const cardsDataFromBackend = [
     priority: "Low",
     comments: 12,
     files: 0,
-    column: "to-do",
+    column: "To Do",
     users: [User1, User3, User4],
   },
   {
@@ -30,8 +30,8 @@ export const cardsDataFromBackend = [
     priority: "High",
     comments: 10,
     files: 3,
-    column: "to-do",
-    user: [User2, User5],
+    column: "To Do",
+    users: [User2, User5],
   },
   {
     id: uuidv4(),
@@ -41,7 +41,7 @@ export const cardsDataFromBackend = [
     priority: "High",
     comments: 8,
     files: 5,
-    column: "to-do",
+    column: "To Do",
     users: [User1, User5, User4],
   },
   {
@@ -51,7 +51,7 @@ export const cardsDataFromBackend = [
     priority: "Low",
     comments: 14,
     files: 15,
-    column: "on-progress",
+    column: "On Progress",
     users: [User4, User3, User1],
   },
   {
@@ -61,7 +61,7 @@ export const cardsDataFromBackend = [
     priority: "Low",
     comments: 9,
     files: 10,
-    column: "on-progress",
+    column: "On Progress",
     users: [User4],
   },
   {
@@ -71,7 +71,7 @@ export const cardsDataFromBackend = [
     priority: "Completed",
     comments: 12,
     files: 15,
-    column: "done",
+    column: "Done",
     users: [User5, User3],
   },
   {
@@ -81,7 +81,7 @@ export const cardsDataFromBackend = [
     priority: "Completed",
     comments: 12,
     files: 15,
-    column: "done",
+    column: "Done",
     users: [User1, User4, User3],
   },
 ];

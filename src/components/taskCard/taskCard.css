@@ -43,14 +43,19 @@
 }
 .taskcard-footer {
   margin-top: 2.8rem;
+  align-items: center;
+  justify-content: space-between;
 }
-.taskcard-btn {
+.taskcard-btns-wrapper{
+    gap: 1.4rem;
+}
+.taskcard-btns {
   font-weight: 500;
   font-size: 12px;
   line-height: 15px;
   color: #787486;
 }
-.taskcard-btn > img {
+.taskcard-btns > img {
   height: 1.6rem;
   width: 1.6rem;
   margin-right: 5px;

@@ -6,15 +6,22 @@ import TaskCard from "../taskCard/taskCard";
 
 const handleOnDragEnd = (result, columns, setColumns) => {
   console.log(result);
-  if(!result.destination) return;
+  if (!result.destination) return;
   const { source, destination } = result;
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
     const destColumn = columns[destination.droppableId];
     const sourceItems = [...sourceColumn.items];
     const destItems = [...destColumn.items];
-    const [removed] = sourceItems.splice(source.index, 1);
+    let [removed] = sourceItems.splice(source.index, 1);
+    console.log(destColumn, removed);
+    // if(destColumn.name === "Done"){
+    // removed = { ...removed, priority: "Completed" };
+    // }else{
+    // }
+    removed = { ...removed, column: destColumn.name };
     destItems.splice(destination.index, 0, removed);
+    console.log("destItems", destItems);
     setColumns({
       ...columns,
       [source.droppableId]: {

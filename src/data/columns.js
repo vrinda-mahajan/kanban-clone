@@ -5,19 +5,19 @@ export const columnsFromBackend = {
   [uuidv4()]: {
     name: "To Do",
     items: cardsDataFromBackend.filter((item) =>
-      item.column === "to-do" ? item : null
+      item.column === "To Do" ? item : null
     ),
   },
   [uuidv4()]: {
     name: "On Progress",
     items: cardsDataFromBackend.filter((item) =>
-      item.column === "on-progress" ? item : null
+      item.column === "On Progress" ? item : null
     ),
   },
   [uuidv4()]: {
     name: "Done",
     items: cardsDataFromBackend.filter((item) =>
-      item.column === "done" ? item : null
+      item.column === "Done" ? item : null
     ),
   },
 };
