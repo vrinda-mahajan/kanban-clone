@@ -56,7 +56,7 @@ export const cardsDataFromBackend = [
   },
   {
     id: uuidv4(),
-    cardName: "Research",
+    cardName: "Mobile App Design",
     cardImg: MobileAppImg,
     priority: "Completed",
     comments: 12,

@@ -2,8 +2,11 @@ import { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
 import { columnsFromBackend } from "../../data/columns";
 import "./main.css";
+import TaskCard from "../taskCard/taskCard";
 
 const handleOnDragEnd = (result, columns, setColumns) => {
+  console.log(result);
+  if(!result.destination) return;
   const { source, destination } = result;
   if (source.droppableId !== destination.droppableId) {
     const sourceColumn = columns[source.droppableId];
@@ -68,18 +71,15 @@ export default function Main() {
                   {column.items.length}
                 </h4>
               </div>
-              <div style={{ margin: 8 }}>
+              <div className="droppable-area-wrapper">
                 <Droppable droppableId={id} key={id}>
                   {(provided, snapshot) => {
                     return (
                       <div
                         {...provided.droppableProps}
                         ref={provided.innerRef}
-                        className="column-container"
+                        className="droppable-area-container"
                         style={{
-                          background: snapshot.isDraggingOver ? "blue" : "grey",
-                          padding: 4,
-                          width: 250,
                           minHeight: 500,
                         }}
                       >
@@ -92,24 +92,11 @@ export default function Main() {
                             >
                               {(provided, snapshot) => {
                                 return (
-                                  <div
-                                    ref={provided.innerRef}
-                                    {...provided.draggableProps}
-                                    {...provided.dragHandleProps}
-                                    style={{
-                                      userSelect: "none",
-                                      padding: 16,
-                                      minHeight: 50,
-                                      margin: 8,
-                                      background: snapshot.isDragging
-                                        ? "orange"
-                                        : "red",
-                                      color: "white",
-                                      ...provided.draggableProps.style,
-                                    }}
-                                  >
-                                    <h4>{item?.cardName}</h4>
-                                  </div>
+                                  <TaskCard
+                                    provided={provided}
+                                    snapshot={snapshot}
+                                    item={item}
+                                  />
                                 );
                               }}
                             </Draggable>

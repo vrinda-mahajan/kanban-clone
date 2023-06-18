@@ -5,6 +5,10 @@ import Colorfilter from "./colorfilter.svg";
 import MessageQuestion from "./message-question.svg";
 import Notification from "./notification.svg";
 import SearchNormal from "./search-normal.svg";
+import Comments from "./comments.svg";
+import ThreeDots from "./three-dots.svg";
+import Files from "./files.svg";
+import Plus from "./plus.svg";
 
 export {
   ArrowDown,
@@ -14,4 +18,8 @@ export {
   MessageQuestion,
   Notification,
   SearchNormal,
+  Comments,
+  ThreeDots,
+  Files,
+  Plus,
 };

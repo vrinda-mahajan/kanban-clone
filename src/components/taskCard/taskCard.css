@@ -1,0 +1,57 @@
+.task-card-wrapper {
+  background-color: #ffffff;
+  border-radius: 1.6rem;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+.priority-chip-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.priority-chip {
+  background-color: #dfa87433;
+  border-radius: 4px;
+  padding: 4px 6px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.priority-chip-low {
+  background-color: #dfa87433;
+  color: #d58d49;
+}
+.priority-chip-high {
+  background-color: #d8727d1a;
+  color: #d8727d;
+}
+.priority-chip-completed {
+  background-color: #83c29d33;
+  color: #68b266;
+}
+.taskcard-name {
+  color: #0d062d;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2.2rem;
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+.taskcard-description {
+  color: #787486;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.taskcard-footer {
+  margin-top: 2.8rem;
+}
+.taskcard-btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #787486;
+}
+.taskcard-btn > img {
+  height: 1.6rem;
+  width: 1.6rem;
+  margin-right: 5px;
+}
