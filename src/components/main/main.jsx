@@ -72,7 +72,7 @@ export default function Main() {
           return (
             <div className="flex-c column-wrapper" key={id}>
               <div className={`column-heading ${identifyColumn(column.name)}`}>
-                <div></div>
+                <div className="circle"></div>
                 <h2 className="column-name">{column.name}</h2>
                 <h4 className="flex-centre column-count">
                   {column.items.length}

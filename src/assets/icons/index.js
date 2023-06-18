@@ -20,6 +20,8 @@ import Menu from "./menu.svg";
 import Pause from "./pause.svg";
 import Setting from "./setting.svg";
 import TaskSquare from "./task-square.svg";
+import Share from "./share.svg";
+import Message from "./message.svg";
 
 export {
   ArrowDown,
@@ -33,4 +35,17 @@ export {
   ThreeDots,
   Files,
   Plus,
+  AddSquare,
+  Calendar,
+  Category,
+  Edit,
+  Filter,
+  Lamp,
+  Link,
+  Menu,
+  Pause,
+  Setting,
+  TaskSquare,
+  Share,
+  Message,
 };

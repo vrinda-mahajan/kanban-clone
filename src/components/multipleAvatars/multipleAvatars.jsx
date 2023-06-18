@@ -1,10 +1,10 @@
 import "./multipleAvatars.css";
 export default function MultipleAvatars({ users }) {
   return (
-    <div class="avatars">
+    <div className="avatars">
       {users.map((user, index) => {
         return (
-          <span class="avatar">
+          <span key={index} className="avatar">
             <img alt={`user ${index}`} src={user} />
           </span>
         );
