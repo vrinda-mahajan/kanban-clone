@@ -2,6 +2,11 @@ import {
   MobileAppImg,
   MoodboardImg,
   OnBoardingImg,
+  User1,
+  User2,
+  User3,
+  User4,
+  User5,
 } from "../assets/images/index";
 import { v4 as uuidv4 } from "uuid";
 
@@ -15,6 +20,7 @@ export const cardsDataFromBackend = [
     comments: 12,
     files: 0,
     column: "to-do",
+    users: [User1, User3, User4],
   },
   {
     id: uuidv4(),
@@ -25,6 +31,7 @@ export const cardsDataFromBackend = [
     comments: 10,
     files: 3,
     column: "to-do",
+    user: [User2, User5],
   },
   {
     id: uuidv4(),
@@ -35,6 +42,7 @@ export const cardsDataFromBackend = [
     comments: 8,
     files: 5,
     column: "to-do",
+    users: [User1, User5, User4],
   },
   {
     id: uuidv4(),
@@ -44,6 +52,7 @@ export const cardsDataFromBackend = [
     comments: 14,
     files: 15,
     column: "on-progress",
+    users: [User4, User3, User1],
   },
   {
     id: uuidv4(),
@@ -53,6 +62,7 @@ export const cardsDataFromBackend = [
     comments: 9,
     files: 10,
     column: "on-progress",
+    users: [User4],
   },
   {
     id: uuidv4(),
@@ -62,6 +72,7 @@ export const cardsDataFromBackend = [
     comments: 12,
     files: 15,
     column: "done",
+    users: [User5, User3],
   },
   {
     id: uuidv4(),
@@ -71,5 +82,6 @@ export const cardsDataFromBackend = [
     comments: 12,
     files: 15,
     column: "done",
+    users: [User1, User4, User3],
   },
 ];
